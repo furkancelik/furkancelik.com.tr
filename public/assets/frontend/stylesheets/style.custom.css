@@ -1,0 +1,227 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500&subset=latin,latin-ext);
+
+* { margin: 0px; padding: 0px; font-family: 'Roboto', sans-serif;}
+body { background: #F1F1F1;}
+
+#navigasyon {width:100%; position:fixed; top:0px; left:0px;background:#323232;z-index:3; min-height:51px; }
+
+#navigasyon ul.nav {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+line-height: 3.5;
+}
+
+#navigasyon ul.nav li {display: inline-block;
+position: relative;
+padding: 2px 0px;
+margin: -2px;}
+
+#navigasyon ul.nav li a {color: #EFEFEF;
+display: block;
+font-family: 'Oswald', sans-serif;	
+font: 15px;
+padding:1px 15px;
+letter-spacing: 1px;
+text-decoration: none;
+text-transform: uppercase; border-right:1px dotted #555;}
+#navigasyon ul.nav li:last-child a { border-right:0px none;}
+#navigasyon ul.nav li a:hover { width:100%; background:#69C773; color:#FFF;}
+
+ul.nav-socials {list-style:none;margin: 0px;padding:0px; float:right; }
+ul.nav-socials li{   float:left; }
+ul.nav-socials li a { margin:10px;display:block;background:#4E4E4E;text-align:center; padding:5px 0px; width:30px; color:#FFF;}
+ul.nav-socials li a:hover , ul.nav-socials li a.active  { background:#69C773; color:#FFF;}
+ul.nav-socials li form { overflow:hidden;float:left; display:none;}
+ul.nav-socials li form .input-content { margin: 10px;
+overflow: hidden;
+position: absolute;
+height: 31px;
+width: 145px;
+float: left;
+margin-left: -135px;}
+ul.nav-socials li form input { border:none 0px;float:left;position:absolute; padding:5px; margin-left:149px;}
+ul.nav-socials li form input:focus {border:none 0px; }
+ul.nav-socials li form button {background:#69C773; color:#FFF;text-align:center; padding:5px 0px; width:31px; margin:10px 9px;border:0px none;}
+
+#slide { width:100%; max-height:500px; /*min-height:300px;*/
+background:url("../../images/pencraft-bg2.jpg") no-repeat center;
+background-attachment: fixed;
+background-color: #458;
+/*background-size:100% auto;*/
+    background-size:100% 150%;
+	background-origin:border-box;
+color: #FFF; margin-top:50px; 
+}
+ 
+
+
+
+#slide .profile {background: none repeat scroll 0% 0% rgba(60, 70, 80, 0.5); height:500px; text-align:center; padding-top:80px;}
+#slide .profile img { width:160px; height:160px; border:2px solid #555; }
+#slide .profile h3 { font-weight:normal; margin-top:20px; font-size:160%;} 
+
+#slide .slide h1 { font-size:400%; margin-top:10%;}
+#slide .slide h4 { margin-bottom:10%;}
+.cover{
+-webkit-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+#slide  .slidedown {  cursor:pointer; position:absolute; left:50%; margin-left:-55px; background:#69C773; width:55px; height:55px; text-align:center; font-size:180%;  margin-top:-30px; border-radius:150px; line-height:70px; border-bottom	:1px solid #333;}
+#slide  .slidedown i { font-size:150%; font-weight:bold;}
+
+.divider {
+    background: none repeat scroll 0px 0px rgba(255, 255, 255, 0.15);
+    height: 2px;
+    margin: 2rem auto;
+    width: 80%;
+}
+
+
+#main { margin-top:50px;}
+#main .item { background:#FFF; padding:35px; margin-bottom:30px;}
+#main .item h3 { margin:0px; padding:0px; font-size:200%;}
+#main .item h3 a { text-decoration:none; color:#000; margin:0px; padding:0px;}
+#main .item h3 a:hover { color:#69C773;}
+#main .item .info { float:left; margin-top:15px; font-size:100%; color:#666;}
+#main .item .info .like { color:#337AB7; }
+#main .item .info .unlike {  color:#D9534F;}
+#main .item .category { float:right;margin-top:15px;}
+#main .item .category a { font-size:85%; font-weight:normal; }
+#main .item .content { margin-top:15px; font-size:110%;}
+#main .item .content img { margin:15px 0px; max-width:100%;}
+#main .item a.readmore { border:2px solid #ddd; background:#fff; color:#69C773; font-weight:500; margin-top:20px;}
+#main .item a.readmore small { color:#666;}
+#main .item a.readmore.next { float:left;}
+#main .item a.readmore.prev { float:right;}
+
+#main .widget { margin:0px; padding:0px;box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+margin: 0px 0px 30px;
+background: none repeat scroll 0% 0% #F9F9F9;}
+#main .widget h2 { color: #2F3C4E;
+font-size: 120%;
+font-weight: 700;
+background: none repeat scroll 0% 0% #FFF;
+line-height: 28px;
+padding: 12px 20px;
+text-align: center;
+box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.07);
+margin:0px;
+}
+#main .widget .content {overflow: hidden;
+padding: 20px;}
+
+ul.pagination { margin-top:0px;}
+ul.pagination li  { color:#69C773;}
+ul.pagination li a { color:#69C773;}
+ul.pagination li a:hover { color:#000;}
+ul.pagination li.active a , ul.pagination li.active:hover  a { background:#69C773; border-color:#69C773;}
+
+#footer { display:none; color:#eee; background:url('../../images/footer-bg.png'); margin-top:20px; height:280px; }
+#footer .row { margin-top:10px;}
+
+#footer ul.populer-post { margin:0px; padding:0px; list-style:none; }
+#footer ul.populer-post li a { color:#eee; font-size:110%;text-decoration:none;}
+#footer ul.populer-post li a:hover { color:#69C773;}
+#footer ul.populer-post li a i { margin-right:5px;}
+#footer ul.populer-post li p { font-size:90%;}
+#footer ul.last-work {margin:0px; padding:0px; list-style:none; }
+#footer ul.last-work li { float:left; margin:8px; text-align:center; padding:4px; width:90px; height:95px; overflow:hidden;}
+#footer ul.last-work li img { width:70px; height:70px;}
+#footer ul.last-work li  a { text-decoration:none; color:#FFF; }
+
+#footer-end {background: none repeat scroll 0% 0% #2B2B2B;
+border-top: 1px solid #363636;
+height: 50px; color:#ddd; padding:15px;text-align:center;}
+
+
+.scrollToTop {bottom: 30px;
+right: 28px;
+position: fixed;
+z-index: 987;
+display: none;
+opacity:0.5;
+background: none repeat scroll 0% 0% #6A6A6A;
+border-radius: 2px;
+color:#FFF; cursor:pointer;
+padding: 9px 16px;}
+
+
+.responsive-profile { width:100%; min-height:200px; /*min-height:300px;*/
+background:url("../../images/pencraft-bg2.jpg") no-repeat;
+/*background-size:100% auto;*/
+background-size:100% 100%;
+color: #FFF; text-align:center; padding:10px 0px;  }
+
+.responsive-profile  img { width:80px; height:80px; border:2px solid #555; margin-top:5%; }
+.responsive-profile  h1 { font-weight:500; margin-top:10px; font-size:130%;} 
+.responsive-profile  p { font-size:90%;}
+
+ul.responsive-nav{ list-style:none; margin:0px; padding:0px;}
+ul.responsive-nav li {float: none;
+width: 240px; 
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+margin-left: 0px;
+margin-top: 0px;}
+
+
+ul.responsive-nav  li a { display: inline-block;
+padding:15px;
+font-size:110%;
+text-align: left;
+color:#222;
+font-family: 'Oswald', sans-serif;	
+text-decoration:none;
+/*text-transform: none;*/
+width: 100%;}
+ul.responsive-nav  li a:hover { background:#DDD;}
+
+ul.responsive-social-nav  { border-bottom:1px solid #ddd; text-align:center; margin:0px; padding:0px; list-style:none;}
+ul.responsive-social-nav li { display:inline-block; margin:0px;margin-left:-5px;}
+
+ul.responsive-social-nav li a {padding:12px 20px;
+font-size:110%; border-right:1px solid #ddd;
+text-align: left; display:block;
+color:#222;
+text-decoration:none;
+}
+ul.responsive-social-nav li:first-child a { border-left:1px solid #ddd;}
+ul.responsive-social-nav li a:hover { background:#ddd;}
+
+.responsive-search form { margin:0px; padding:0px;}
+.responsive-search form input { padding: 10px;
+border: 1px solid rgb(221, 221, 221);
+border-top: 0px none;width: 85%;
+font-size: 100%; float:left; }
+.responsive-search form button { 
+margin: 0px;
+width: 15%;
+float: left;
+padding: 10px;
+background: #ddd;
+border:1px solid #ddd;
+border-top:0px none;
+}
+.responsive-search form button:hover { background:#ccc; border-color:#ccc;}
+
+.responsive-nav-btn { display:none; margin:0px; padding:0px; margin-top:-2px; }
+.responsive-nav-btn a { color:#FFF;font-size:190%;background:none repeat scroll 0% 0% #2D2D2D;float:left; padding:7px 20px; max-height:51px;}
+.responsive-nav-btn a:hover { background:#69C773;}
+.responsive-navigasyon { position:fixed; height:100%;z-index:6; background:#fff;top:0px; left:0px; width:240px; display:none; overflow-y: auto;
+overflow-x: hidden;}
+.responsive-focus { position:fixed; width:100%; height:100%; opacity:0.5; background:#000; z-index:5; top:0px; left:0px; display:none;}
+
+@media (max-width: 991px){
+ul.nav-socials , ul.nav { display:none;}
+.responsive-nav-btn { display:block;}
+#slide .profile { display:none;}
+}
+
+
+@media (min-width: 991px){
+.responsive-focus , .responsive-navigasyon { display:none !important;}
+}
+
+
