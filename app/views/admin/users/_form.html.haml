@@ -1,0 +1,38 @@
+= form_for [:admin, @user] do |f|
+  - if @user.errors.any?
+    .alert.alert-danger
+      %b Aşşağıdaki Hataları Düzeltip Tekrar Deneyin;
+      %ul
+        -@user.errors.messages.each do |m|
+          -if m.first == :password
+            %li= m.last[1]
+          -else
+            %li= m.last.first
+
+
+
+  .form-group
+    =f.label "Adı"
+    =f.text_field(:first_name, class: "form-control", :placeholder => "Adı")
+  .form-group
+    =f.label "Soyadı"
+    =f.text_field(:last_name, class: "form-control", :placeholder => "Soyadı")
+  .form-group
+    =f.label "Kullanıcı Adı"
+    =f.text_field(:username, class: "form-control", :placeholder => "Kullanıcı Adı")
+  .form-group
+    =f.label "E-Posta Adresi"
+    =f.email_field(:email, class: "form-control", :placeholder => "E-Posta Adresi")
+  .form-group
+    =f.label "Şifre"
+    =f.password_field(:password, class: "form-control", :placeholder => "Şifre")
+  .form-group
+    =f.label "Şifre (Tekrar)"
+    =f.password_field(:password_confirmation, class: "form-control", :placeholder => "Şifre (Tekrar)")
+  .form-group
+    =f.label "Yetkili"
+    %br
+    =f.check_box(:auth)
+
+  %button.btn.btn-primary{:type => "submit"} Kaydet
+  %a.btn.btn-default{href: admin_users_url } İptal Et

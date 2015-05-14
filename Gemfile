@@ -46,3 +46,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml'
 gem 'haml-rails'
 gem 'bootstrap-sass'
+
+gem 'bcrypt-ruby', '~> 3.1.2'
+
+gem 'email_validator'

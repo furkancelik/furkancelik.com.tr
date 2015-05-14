@@ -103,3 +103,6 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.alert ul { margin: 0px; padding: 0px; margin-left: 10px; margin-top: 5px; list-style-position: inside;}
+.add-link {display: block;margin-bottom: 10px; float: right;}

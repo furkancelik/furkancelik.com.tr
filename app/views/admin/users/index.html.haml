@@ -1,0 +1,54 @@
+-content_for :header do
+  %link{href:"/assets/backend/css/dataTables.bootstrap.css",rel:"stylesheet"}/
+
+
+
+%h1.page-header Kayıtlı Kullanıcılar
+
+= render '/admin/layouts/flash_error'
+
+%a.btn.btn-primary.add-link{href:new_admin_user_url} Yeni Ekle
+.clearfix
+
+%table#example.table.table-striped.table-bordered{:cellspacing => "0", :width => "100%"}
+  %thead
+    %tr
+      %tr
+      %th Kullanıcı Adı
+      %th Adı
+      %th Soyadı
+      %th E-Posta Adresi
+      %th İşlermler
+  %tfoot
+    %tr
+      %th Kullanıcı Adı
+      %th Adı
+      %th Soyadı
+      %th E-Posta Adresi
+      %th İşlermler
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td=user.username
+        %td=user.first_name
+        %td=user.last_name
+        %td=user.email
+        %td
+          %a{href:edit_admin_user_path(user.id),title:"Düzenle"}
+            %i.glyphicon.glyphicon-edit
+          %a{:"data-method"=>"delete" , :"data-confirm"=>"Silmek İstediğinize Eminmisiniz?", href:"users/#{user.id}" , title:"Sil" }
+            %i.glyphicon.glyphicon-trash
+
+
+
+
+
+
+-content_for :footer do
+  %script{src:"/assets/backend/js/jquery.dataTables.min.js"}
+  %script{src:"/assets/backend/js/dataTables.bootstrap.js"}
+
+  :javascript
+        $(document).ready(function() {
+          $('#example').dataTable();
+      });
