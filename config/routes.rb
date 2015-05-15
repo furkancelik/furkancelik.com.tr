@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get '/login' => 'index#login'
+    get '/logout' => 'index#logout'
+    post '/login' => 'index#login_post'
     get '/index' => 'index#index'
     resources :users
 
