@@ -1,7 +1,7 @@
 .col-sm-3.col-md-2.sidebar
   %ul.nav.nav-sidebar
     %li.active
-      %a{:href => "#"}
+      %a{:href => admin_index_url}
         %i.glyphicon.glyphicon-home
         Anasayfa
         %span.sr-only (current)
@@ -41,10 +41,10 @@
         %i.glyphicon.glyphicon-envelope
         İletişim
     %li
-      %a{:href => ""}
+      %a{:href => edit_admin_user_url(session[:user_id])}
         %i.glyphicon.glyphicon-user
         Profil
     %li
-      %a{:href => ""}
+      %a{:href => admin_logout_url}
         %i.glyphicon.glyphicon-off
         Çıkış Yap

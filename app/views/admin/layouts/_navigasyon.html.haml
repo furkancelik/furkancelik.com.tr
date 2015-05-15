@@ -10,7 +10,7 @@
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a{:href=>"#"} Anasayfa
+          %a{:href=>admin_index_url} Anasayfa
         %li
           %a{:href=>"#"} Ayarlar
         %li
@@ -22,6 +22,6 @@
         %li
           %a{:href=>"#"} İletişim
         %li
-          %a{:href=>"#"} Profil
+          %a{:href=>edit_admin_user_url(session[:user_id])} Profil
         %li
           %a{:href=> admin_logout_url } Çıkış Yap
