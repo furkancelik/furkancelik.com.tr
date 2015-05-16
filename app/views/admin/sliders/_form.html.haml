@@ -1,0 +1,31 @@
+= form_for [:admin, @slider] do |f|
+  - if @slider.errors.any?
+    .alert.alert-danger
+      %b Aşşağıdaki Hataları Düzeltip Tekrar Deneyin;
+      %ul
+        -@slider.errors.messages.each do |m|
+          -if m.first == :password
+            %li= m.last[1]
+          -else
+            %li= m.last.first
+
+
+
+  .form-group
+    =f.label "Resim"
+    =f.text_field(:picture, class: "form-control", :placeholder => "Resim")
+  .form-group
+    =f.label "Başlık"
+    =f.text_field(:title, class: "form-control", :placeholder => "Başlık")
+  .form-group
+    =f.label "Açıklama"
+    =f.text_field(:comment, class: "form-control", :placeholder => "Açıklama")
+  .form-group
+    =f.label "Logo"
+    =f.text_field(:logo, class: "form-control", :placeholder => "Logo")
+  .form-group
+    =f.label "İçerik"
+    =f.text_field(:content, class: "form-control", :placeholder => "İçerik")
+
+  %button.btn.btn-primary{:type => "submit"} Kaydet
+  %a.btn.btn-default{href: admin_users_url } İptal Et
