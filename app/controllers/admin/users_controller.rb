@@ -39,7 +39,6 @@ class Admin::UsersController < Admin::ApplicationController
     rescue ActiveRecord::RecordNotFound => _
       redirect_to admin_users_url, error:"Bir Hata Meydana Geldi ve Kayıt Silinemedi"
     end
-
   end
 
 end

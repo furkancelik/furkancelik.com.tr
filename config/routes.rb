@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :categories
+  end
+  namespace :admin do
     resources :sliders
   end
   namespace :admin do
+    get '/' => 'index#login'
     get '/login' => 'index#login'
     get '/logout' => 'index#logout'
     post '/login' => 'index#login_post'

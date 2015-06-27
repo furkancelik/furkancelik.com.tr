@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515155347) do
+ActiveRecord::Schema.define(version: 20150516151517) do
+
+  create_table "categories", force: :cascade do |t|
+    t.integer  "top_id"
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sliders", force: :cascade do |t|
     t.string   "picture"

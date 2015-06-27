@@ -1,0 +1,50 @@
+-content_for :header do
+  %link{href:"/assets/backend/css/dataTables.bootstrap.css",rel:"stylesheet"}/
+
+
+
+%h1.page-header Kayıtlı Kategoriler
+
+= render '/admin/layouts/flash_error'
+
+%a.btn.btn-primary.add-link{href: new_admin_category_path } Yeni Ekle
+.clearfix
+
+%table#example.table.table-striped.table-bordered{:cellspacing => "0", :width => "100%"}
+  %thead
+    %tr
+      %tr
+      %th Üst Kategori
+      %th Kategori Adı
+      %th Link
+      %th İşlermler
+  %tfoot
+    %tr
+      %th Üst Kategori
+      %th Kategori Adı
+      %th Link
+      %th İşlermler
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td=(category.parent nil?)? category.parent[:name] : "Ana Kategori"
+        %td=category.name
+        %td=category.slug
+        %td
+          %a{href:edit_admin_category_url(category.id),title:"Düzenle"}
+            %i.glyphicon.glyphicon-edit
+          %a{:"data-method"=>"delete" , :"data-confirm"=>"Silmek İstediğinize Eminmisiniz?", href:admin_category_path(category.id) , title:"Sil" }
+            %i.glyphicon.glyphicon-trash
+
+
+
+
+
+-content_for :footer do
+  %script{src:"/assets/backend/js/jquery.dataTables.min.js"}
+  %script{src:"/assets/backend/js/dataTables.bootstrap.js"}
+
+  :javascript
+        $(document).ready(function() {
+          $('#example').dataTable();
+      });

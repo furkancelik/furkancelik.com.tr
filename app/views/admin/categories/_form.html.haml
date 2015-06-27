@@ -1,0 +1,27 @@
+= form_for [:admin, @category] do |f|
+  - if @category.errors.any?
+    .alert.alert-danger
+      %b Aşşağıdaki Hataları Düzeltip Tekrar Deneyin;
+      %ul
+        -@category.errors.messages.each do |m|
+          -if m.first == :password
+            %li= m.last[1]
+          -else
+            %li= m.last.first
+
+
+
+  .form-group
+    =f.label "Üst Kategori"
+    -category = Category.where.not(id:@category.id).map { |c| [c.name, c.id] }
+    -category = [["Ana Kategori","0"]]+category
+    =f.select(:top_id, options_for_select(category,:selected => @category.top_id), {}, { class:"form-control" })
+  .form-group
+    =f.label "Başlık"
+    =f.text_field(:name, class: "form-control", :placeholder => "Başlık")
+  .form-group
+    =f.label "Link"
+    =f.text_field(:slug, class: "form-control", :placeholder => "Link")
+
+  %button.btn.btn-primary{:type => "submit"} Kaydet
+  %a.btn.btn-default{href: admin_categories_url } İptal Et
