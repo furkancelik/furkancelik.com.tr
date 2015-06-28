@@ -5,7 +5,10 @@
       %ul
         -@user.errors.messages.each do |m|
           -if m.first == :password
-            %li= m.last[1]
+            -unless m.last[1].nil?
+              %li= m.last[1]
+            -else
+              %li= m.last.first
           -else
             %li= m.last.first
 

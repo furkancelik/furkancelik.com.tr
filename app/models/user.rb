@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
       presence: {message: "Şifre Alanı Boş Bırakılamaz" },
       length: { minimum: 6, message:"Şifre En Az 6 Karakter Olmalıdır" },
       on: :create
+  validates :password,
+            length: { message:"Şifre En Az 6 Karakter Olmalıdır",minimum: 6 },
+            allow_nil: true,
+            on: :update
 end
