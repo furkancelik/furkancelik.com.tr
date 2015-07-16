@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :children, class_name: "Category"
+  has_many :children, class_name: "Category" ,dependent: :destroy , foreign_key: "top_id"
   belongs_to :parent, class_name: "Category",foreign_key: "top_id"
 
   validates :name,

@@ -15,7 +15,7 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def index
-    @categories = Category.all
+    @categories = Category.includes(:parent)
   end
 
   def edit
