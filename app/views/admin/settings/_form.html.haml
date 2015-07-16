@@ -1,0 +1,33 @@
+= form_for [:admin,@setting] do |f|
+  - if @setting.errors.any?
+    .alert.alert-danger
+      %b Aşşağıdaki Hataları Düzeltip Tekrar Deneyin;
+      %ul
+        -@setting.errors.messages.each do |m|
+          %li= m.last.first
+
+
+  .form-group
+    =f.label "Sayfa Başlığı"
+    =f.text_field(:title, class: "form-control")
+  .form-group
+    =f.label "Meta Keywords"
+    =f.text_field(:keywords, class: "form-control")
+  .form-group
+    =f.label "Meta Description"
+    =f.text_field(:description, class: "form-control")
+  .form-group
+    =f.label "Facebook"
+    =f.text_field(:fb_account, class: "form-control")
+  .form-group
+    =f.label "Tiwitter"
+    =f.text_field(:tw_account, class: "form-control")
+  .form-group
+    =f.label "GitHub"
+    =f.text_field(:git_account, class: "form-control")
+  .form-group
+    =f.label "Footer Metni"
+    =f.text_area(:footer, class: "form-control")
+
+  %button.btn.btn-primary{:type => "submit"} Kaydet
+  %a.btn.btn-default{href: admin_users_url } İptal Et

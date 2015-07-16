@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516151517) do
+ActiveRecord::Schema.define(version: 20150716144129) do
 
   create_table "categories", force: :cascade do |t|
     t.integer  "top_id"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20150516151517) do
     t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "keywords"
+    t.string   "fb_account"
+    t.string   "tw_account"
+    t.string   "git_account"
+    t.string   "footer"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "sliders", force: :cascade do |t|
