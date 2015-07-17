@@ -1,0 +1,33 @@
+= form_for [:admin, @page] do |f|
+  - if @page.errors.any?
+    .alert.alert-danger
+      %b Aşşağıdaki Hataları Düzeltip Tekrar Deneyin;
+      %ul
+        -@page.errors.messages.each do |m|
+          %li= m.last.first
+
+
+  .form-group
+    =f.label "Başlık"
+    =f.text_field(:title, class: "form-control", :placeholder => "Başlık")
+  .form-group
+    =f.label "Konum"
+    =f.select(:location, [["Menü","menu"],["Footer","footer"]],{},{class: "form-control"})
+  .form-group
+    =f.label "Sıra"
+    =f.text_field(:order, class: "form-control", :placeholder => "Sıra")
+  .form-group
+    =f.label "Meta Keywords"
+    =f.text_field(:keywords, class: "form-control", :placeholder => "Meta Keywords")
+  .form-group
+    =f.label "Meta Descriptions"
+    =f.text_field(:description, class: "form-control", :placeholder => "Meta Descriptions")
+  .form-group
+    =f.label "Sayfa Başlığı"
+    =f.text_field (:page_title, class: "form-control", :placeholder => "Sayfa Başlığı")
+  .form-group
+    =f.label "İçerik"
+    =f.text_area(:content, class: "form-control", :placeholder => "İçerik")
+
+  %button.btn.btn-primary{:type => "submit"} Kaydet
+  %a.btn.btn-default{href: admin_pages_url} İptal Et

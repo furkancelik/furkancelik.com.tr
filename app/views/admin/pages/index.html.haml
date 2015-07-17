@@ -1,0 +1,49 @@
+-content_for :header do
+  %link{href:"/assets/backend/css/dataTables.bootstrap.css",rel:"stylesheet"}/
+
+
+
+%h1.page-header Kayıtlı Sayfalar
+
+= render '/admin/layouts/flash_error'
+
+%a.btn.btn-primary.add-link{href:new_admin_page_url} Yeni Ekle
+.clearfix
+
+%table#example.table.table-striped.table-bordered{:cellspacing => "0", :width => "100%"}
+  %thead
+    %tr
+      %tr
+      %th Menü Başlığı
+      %th Konum
+      %th Sıra
+      %th İşlermler
+  %tfoot
+    %tr
+      %th Menü Başlığı
+      %th Konum
+      %th Sıra
+      %th İşlermler
+  %tbody
+    - @pages.each do |page|
+      %tr
+        %td=page.title
+        %td=page.location_attribute
+        %td=page.order
+        %td
+          %a{href:edit_admin_page_path(page.id),title:"Düzenle"}
+            %i.glyphicon.glyphicon-edit
+          %a{:"data-method"=>"delete" , :"data-confirm"=>"Silmek İstediğinize Eminmisiniz?", href:"pages/#{page.id}" , title:"Sil" }
+            %i.glyphicon.glyphicon-trash
+
+
+
+
+-content_for :footer do
+  %script{src:"/assets/backend/js/jquery.dataTables.min.js"}
+  %script{src:"/assets/backend/js/dataTables.bootstrap.js"}
+
+  :javascript
+        $(document).ready(function() {
+          $('#example').dataTable();
+      });
