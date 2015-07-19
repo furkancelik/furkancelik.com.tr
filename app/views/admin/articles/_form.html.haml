@@ -11,6 +11,9 @@
     =f.label "Başlık"
     =f.text_field(:title, class: "form-control", :placeholder => "Başlık")
   .form-group
+    =f.label "Kategoriler"
+    =f.collection_select(:category,@categorys, :id , :name,{:selected => @article.category.map {|j| j.id} },{class: "form-control",:multiple=>"multiple"})
+  .form-group
     =f.label "Meta Keywords"
     =f.text_field(:keywords, class: "form-control", :placeholder => "Meta Keywords")
   .form-group
