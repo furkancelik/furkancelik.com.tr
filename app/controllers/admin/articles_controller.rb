@@ -1,5 +1,5 @@
 class Admin::ArticlesController < Admin::ApplicationController
-  before_action :categories, only:[:new,:edit]
+  before_action :categories, only:[:new,:edit,:create]
 
   def new
     @article = Article.new
