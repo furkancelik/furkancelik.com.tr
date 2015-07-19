@@ -27,7 +27,7 @@
     =f.text_field(:git_account, class: "form-control")
   .form-group
     =f.label "Footer Metni"
-    =f.text_area(:footer, class: "form-control")
+    =f.text_area(:footer, class: "form-control",id:"editor")
 
   %button.btn.btn-primary{:type => "submit"} Kaydet
   %a.btn.btn-default{href: admin_users_url } İptal Et
