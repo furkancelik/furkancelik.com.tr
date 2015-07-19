@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717190943) do
+ActiveRecord::Schema.define(version: 20150718230806) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "top_content"
+    t.text     "main_content"
+    t.string   "description"
+    t.string   "keywords"
+    t.string   "link"
+    t.boolean  "publish"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.integer  "top_id"

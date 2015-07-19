@@ -1,0 +1,34 @@
+= form_for [:admin, @article] do |f|
+  - if @article.errors.any?
+    .alert.alert-danger
+      %b Aşşağıdaki Hataları Düzeltip Tekrar Deneyin;
+      %ul
+        -@article.errors.messages.each do |m|
+          %li= m.last.first
+
+
+  .form-group
+    =f.label "Başlık"
+    =f.text_field(:title, class: "form-control", :placeholder => "Başlık")
+  .form-group
+    =f.label "Meta Keywords"
+    =f.text_field(:keywords, class: "form-control", :placeholder => "Meta Keywords")
+  .form-group
+    =f.label "Meta Descriptions"
+    =f.text_field(:description, class: "form-control", :placeholder => "Meta Descriptions")
+  .form-group
+    =f.label "Link"
+    =f.text_field(:link, class: "form-control", :placeholder => "Link")
+  .form-group
+    =f.label "Yayın"
+    %br
+    =f.check_box(:publish)
+  .form-group
+    =f.label "Üst İçerik"
+    =f.text_area(:top_content, class: "form-control", :placeholder => "İçerik")
+  .form-group
+    =f.label "Ana İçerik"
+    =f.text_area(:main_content, class: "form-control", :placeholder => "İçerik")
+
+  %button.btn.btn-primary{:type => "submit"} Kaydet
+  %a.btn.btn-default{href: admin_articles_url} İptal Et

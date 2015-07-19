@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     post '/login' => 'index#login_post'
     get '/index' => 'index#index'
     resources :users
+    resources :articles
 
   end
 

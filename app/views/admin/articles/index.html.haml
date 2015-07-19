@@ -1,0 +1,53 @@
+-content_for :header do
+  %link{href:"/assets/backend/css/dataTables.bootstrap.css",rel:"stylesheet"}/
+
+
+
+%h1.page-header Kayıtlı Makaleler
+
+= render '/admin/layouts/flash_error'
+
+%a.btn.btn-primary.add-link{href:new_admin_article_url} Yeni Ekle
+.clearfix
+
+%table#example.table.table-striped.table-bordered{:cellspacing => "0", :width => "100%"}
+  %thead
+    %tr
+      %tr
+      %th Başlık
+      %th Kategori
+      %th Link
+      %th İşlermler
+  %tfoot
+    %tr
+      %th Başlık
+      %th Kategori
+      %th Link
+      %th İşlermler
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td=article.title
+        %td
+        %td=article.link
+        %td
+          -if article.publish == true
+            %i.glyphicon.glyphicon-eye-open
+          -else
+            %i.glyphicon.glyphicon-eye-close
+          %a{href:edit_admin_article_path(article.id),title:"Düzenle"}
+            %i.glyphicon.glyphicon-edit
+          %a{:"data-method"=>"delete" , :"data-confirm"=>"Silmek İstediğinize Eminmisiniz?", href:admin_article_path(article.id) , title:"Sil" }
+            %i.glyphicon.glyphicon-trash
+
+
+
+
+-content_for :footer do
+  %script{src:"/assets/backend/js/jquery.dataTables.min.js"}
+  %script{src:"/assets/backend/js/dataTables.bootstrap.js"}
+
+  :javascript
+        $(document).ready(function() {
+          $('#example').dataTable();
+      });
