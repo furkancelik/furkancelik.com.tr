@@ -50,3 +50,4 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'email_validator'
+gem 'fcfinder'
