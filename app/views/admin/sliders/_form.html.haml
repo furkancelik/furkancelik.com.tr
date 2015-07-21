@@ -13,7 +13,7 @@
 
   .form-group
     =f.label "Resim"
-    =f.text_field(:picture, class: "form-control", :placeholder => "Resim")
+    =f.text_field(:picture, class: "form-control", :placeholder => "Resim",:readonly=>"readonly", :onclick=>"openFCFinder(this)")
   .form-group
     =f.label "Başlık"
     =f.text_field(:title, class: "form-control", :placeholder => "Başlık")
@@ -29,3 +29,16 @@
 
   %button.btn.btn-primary{:type => "submit"} Kaydet
   %a.btn.btn-default{href: admin_users_url } İptal Et
+
+:javascript
+  function openFCFinder(field) {
+    window.FCFinder = {
+      callBack: function(url) {
+      field.value = url;
+      }
+    };
+    window.open('http://localhost:3000/admin/fcfinder','',
+    'status=0, toolbar=0, location=0, menubar=0, directories=0, ' +
+    'resizable=1, scrollbars=0, width=950, height=400'
+    );
+  }
